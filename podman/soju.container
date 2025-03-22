@@ -5,8 +5,8 @@ Documentation=https://soju.im
 [Container]
 LogDriver=journald
 ContainerName=soju
-AutoUpdate=registry
-Image=localhost/soju:latest
+AutoUpdate=local
+Image=soju.build
 HealthInterval=30s
 Network=host
 Volume=soju-config.volume:/etc/soju

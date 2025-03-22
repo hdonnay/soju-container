@@ -1,3 +1,4 @@
 [Build]
 File=https://github.com/hdonnay/soju-container/raw/refs/heads/main/Dockerfile
 ImageTag=localhost/soju:latest
+SetWorkingDirectory=%t
