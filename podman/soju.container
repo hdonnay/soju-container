@@ -1,0 +1,23 @@
+[Unit]
+Description=soju IRC bouncer
+Documentation=https://soju.im
+
+[Container]
+LogDriver=journald
+ContainerName=soju
+AutoUpdate=registry
+Image=localhost/soju:latest
+HealthInterval=30s
+Network=host
+Volume=soju-config.volume:/etc/soju
+Volume=soju-db.volume:/var/lib/soju
+Timezone=America/Chicago
+
+[Service]
+TimeoutStartSec=300
+TimeoutStopSec=300
+# The following is for a conmon bug where it complains when an inferior process dies too quickly.
+LogFilterPatterns=~Broken pipe
+
+[Install]
+WantedBy=default.target
